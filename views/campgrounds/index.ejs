@@ -1,0 +1,38 @@
+<% include ../partials/header %>
+
+
+
+    <div id="hero-image">
+        <div class="wrapper">
+            <h2><strong>Header Title</strong></h2>
+                <p>View the most popular campgrounds from all over the world!</p>
+                <p>
+                    <a class="button-1" href="/campgrounds/new">Get Started!</a>
+                </p>
+        </div>
+    </div>
+
+    <div class="row text-center" style="display: flex; flex-wrap: wrap">
+            <div class="col-lg-12">
+                <h3>Our Most Popular Campgrounds</h3>
+            </div>
+            
+            <% campgrounds.forEach(function(campground){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <img src="<%= campground.image %>">
+                    <div class="caption">
+                        <h4><%= campground.name %></h4>
+                    </div>
+                    
+                    
+                    <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary"> More Info</a>
+                </div>
+            </div>
+            <% });%>       
+        </div>
+            
+</div>
+        
+    
+<% include ../partials/footer %>
